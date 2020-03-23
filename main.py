@@ -19,7 +19,7 @@ files=[]
 finished_num=0
 # 读写标志(避免重复下载一个文件,此变量值固定不得修改)
 canRead=True
-# u3m8链接
+# m3u8链接
 url=""
 # 下载位置索引
 index=0
@@ -72,11 +72,11 @@ def start(thread_name):
     t=threading.Thread(target=start,args=(thread_name,))
     t.start()
 
-#解析u3m8信息
-def parse_u3m8():
+#解析m3u8信息
+def parse_m3u8():
     global url
     global files
-    print("[  ] 正在解析u3m8链接...")
+    print("[  ] 正在解析m3u8链接...")
     session=requests.session()
     res=session.get(url,headers=headers).content.decode("utf8")
     url=url[0:url.rfind("/")+1]
@@ -88,7 +88,7 @@ def parse_u3m8():
         return True
 
 if __name__=='__main__':
-    url=input("请输入u3m8链接: ")
+    url=input("请输入m3u8链接: ")
     path=input("请输入存储位置：")
     if not os.path.exists(path):
         try:
@@ -99,7 +99,7 @@ if __name__=='__main__':
     file_name=input("请输入文件名：")
     while os.path.exists(path+'/'+file_name):
         file_name=input("文件名已存在，请重新输入文件名: ")
-    if parse_u3m8():
+    if parse_m3u8():
         for i in range(1,thread_num+1):
             t=threading.Thread(target=start,args=("线程"+str(i),))
             t.start()
