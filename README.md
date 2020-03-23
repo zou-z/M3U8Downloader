@@ -6,9 +6,9 @@ threading
 re  
 os 
 ## 使用方法  
-运行main.py后按提示输入即可下载u3m8视频  
+运行main.py后按提示输入m3u8链接即可下载m3u8视频  
 ## 可配置的参数
 (1) thread_num: 多线程数量
 ## 提示  
-如果需要下载一些第一次下载失败的ts文件，可以将这些ts文件名填入files变量，并注释parse_u3m8函数中files的赋值  
+如果需要下载一些第一次下载失败的ts文件，可以将这些ts文件名填入files变量，并注释parse_m3u8函数中files的赋值  
 
