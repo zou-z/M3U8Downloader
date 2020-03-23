@@ -1,5 +1,5 @@
-# U3M8_Download
-u3m8视频多线程下载以及合成工具
+# M3U8Downloader
+m3u8视频多线程下载器（自动合成ts文件）
 ## 调用的库
 requests  
 threading  
